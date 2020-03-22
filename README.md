@@ -1,4 +1,4 @@
-# real-world-stuff
+# Events List
 
 ## Project setup
 ```
