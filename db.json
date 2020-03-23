@@ -101,6 +101,24 @@
       "date": "2020-04-02T21:23:00.000Z",
       "time": "16:00",
       "attendees": []
+    },
+    {
+      "id": 479965,
+      "user": {
+        "id": "123",
+        "name": "Adam"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "123",
+        "name": "Adam"
+      },
+      "title": "Community Meet",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
