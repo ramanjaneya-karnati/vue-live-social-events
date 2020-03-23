@@ -1,32 +1,22 @@
 <template>
     <div>
-        <h1>Events List</h1>
-        <event-card v-for="event in events" :key="event.id" :event="event"></event-card>
+        <h1>Events for {{user.user.name}} </h1>
+        <event-card v-for="event in event.events" :key="event.id" :event="event"></event-card>
     </div>
 </template>
 
 <script>
     import EventCard from '@/components/EventCard.vue'
-    import EventService from '@/services/EventService' // <--- brings in the axios library
+    import {mapState} from 'vuex';
     export default {
         name: "EventList",
         components:{
             'event-card': EventCard
         },
-        data(){
-            return{
-                events : []
-            }
-        },
         created() {
-            EventService.getEvents()
-                .then(response =>{
-                    this.events = response.data
-                })
-                .catch(error =>{
-                    console.log("There was an error", error)
-                })
-        }
+            this.$store.dispatch('event/fetchEvents')
+        },
+        computed: mapState(['event', 'user'])
     }
 </script>
 
